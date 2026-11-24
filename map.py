@@ -58,7 +58,7 @@ class Map(object):
 
 	def generate_surface(self):
 		for x in range(0, self.width):
-			for y in range(self.height/2, self.height):
+			for y in range(self.height//2, self.height):
 				self.generate_block(x, y)
 		self.generated = True
 

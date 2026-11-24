@@ -23,7 +23,7 @@ class Player(Entity):
 		self.lastimage = None
 		self.sprite_name = sprite_name
 		self.load_image("%s-front.png" % self.sprite_name)
- 		self.weapon = None
+		self.weapon = None
 		self.oil_amount = 100
 		self.pistol_bullets = 200
 		self.assault_rifle_bullets = 100
@@ -117,19 +117,19 @@ class Player(Entity):
 		if weapon == True:
 			if self.weapon == None:
 				self.weapon = "torch"
-				print "Set weapon torch"
+				print("Set weapon torch")
 			elif self.weapon == "torch":
 				self.weapon = "pistol"
-				print "Set weapon pistol"
+				print("Set weapon pistol")
 			elif self.weapon == "pistol":
 				self.weapon = "assault-rifle"
-				print "Set weapon assault-rifle"
+				print("Set weapon assault-rifle")
 			elif self.weapon == "assault-rifle":
 				self.weapon = "radio"
-				print "Set weapon radio"
+				print("Set weapon radio")
 			elif self.weapon == "radio":
 				self.weapon = None
-				print "Set weapon none"
+				print("Set weapon none")
 		if shoot == True:
 			if self.weapon != None:
 				if self.weapon == "radio":
@@ -137,15 +137,15 @@ class Player(Entity):
 					for m in self.world.get_open_maps():
 						for block in m.blocks.sprites():
 							if block.rect.x == self.rect.x:
-								print "block %s,%s blocked radio." % (block.rect.x, block.rect.y)
+								print("block %s,%s blocked radio." % (block.rect.x, block.rect.y))
 								radio_usable = False
 							if block.rect.y == self.rect.y:
-								print "block %s,%s blocked radio." % (block.rect.x, block.rect.y)
+								print("block %s,%s blocked radio." % (block.rect.x, block.rect.y))
 								radio_usable = False
 					if radio_usable == True:
 						if self.onGround:
 							self.radio_sound.play()
-							print "Completed the game."
+							print("Completed the game.")
 							self.game_complete = True
 				elif self.weapon == "pistol":
 					if self.pistol_bullets >= 1:
@@ -192,10 +192,10 @@ class Player(Entity):
 		downLimit = self.mapy*self.world.mheight*64+self.world.mheight*64
 		map_changed = False
 		'''
-		print "X %s > %s rightLimit" % (self.rect.x, rightLimit)
-		print "X %s < %s leftLimit" % (self.rect.x, leftLimit)
-		print "Y %s > %s downLimit" % (self.rect.y, downLimit)
-		print "Y %s < %s upLimit" % (self.rect.y, upLimit)
+		print("X %s > %s rightLimit" % (self.rect.x, rightLimit))
+		print("X %s < %s leftLimit" % (self.rect.x, leftLimit))
+		print("Y %s > %s downLimit" % (self.rect.y, downLimit))
+		print("Y %s < %s upLimit" % (self.rect.y, upLimit))
 		'''
 		if self.rect.x > rightLimit:
 			self.mapx += 1

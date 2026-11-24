@@ -10,8 +10,8 @@ from player import *
 from text import *
 from world import *
 
-if not pygame.font: print 'Warning, fonts disabled'
-if not pygame.mixer: print 'Warning, sounds disabled'
+if not pygame.font: print('Warning, fonts disabled')
+if not pygame.mixer: print('Warning, sounds disabled')
 
 WIDTH = 1024
 HEIGHT = 920
@@ -175,15 +175,15 @@ class Engine:
 if __name__ == "__main__":
 	game = Engine(WIDTH, HEIGHT)
 	while game.running == True:
-		print game.state
-		print game.state_running
+		print(game.state)
+		print(game.state_running)
 		if game.state == "main_menu":
-			print "Started main menu"
+			print("Started main menu")
 			game.main_menu()
 		elif game.state == "play":
-			print "Started play"
+			print("Started play")
 			game.play()
 		elif game.state == "ending":
-			print "Started ending"
+			print("Started ending")
 			game.ending()
 		game.state_running = True
